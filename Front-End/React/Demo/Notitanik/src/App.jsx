@@ -32,9 +32,12 @@ const App = () => {
       </header>
       <main className=" mt-[70px] bg-[#2C2C2C]">
         <div className="ctr">
-          <div className=" relative w-[85%] m-[0_auto] h-[400px]">
+          <div className=" flex items-center relative w-[85%] m-[0_auto] h-[430px]">
+            <div>
+              <h1>Hello I'm Mustafoda</h1>
+            </div>
             <img
-              className="w-[520px]  absolute left-[500px]"
+              className="w-[520px]  absolute left-[460px]"
               src={man}
               alt=""
             />
