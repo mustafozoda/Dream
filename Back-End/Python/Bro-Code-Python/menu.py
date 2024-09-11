@@ -1,4 +1,7 @@
-print("Hello world")
+name = "sharif"
+age = 67
+university = "ELTE"
 
-first_name = "Sharif"
-print(first_name)
+print(name)
+print(f"My name is {name}")
+print(f"I'm studying at {university}")
