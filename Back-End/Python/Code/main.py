@@ -1,3 +1,4 @@
+import random
 # --------------------- _ 1 _ ---------------------
 
 # while True:
@@ -71,34 +72,74 @@
 # for i in substrings:
 #     print(i)
 
+# -----
 
-def seperating(word, k=3):
-    result = []
-    if len(word) % k == 0:
-        for i in range(0, len(word), k):
-            result.append(word[i:i+k])
-    else:
-        print("Please provide a word that is evenly divisible by k!")
-    return result
-
-
-def choosing(res1):
-    final_result = []
-    for chunk in res1:
-        seen = set()
-        unique_chars = []
-        for char in chunk:
-            if char not in seen:
-                seen.add(char)
-                unique_chars.append(char)
-        final_result.append(''.join(unique_chars))
-    return final_result
+# def seperating(word, k=3):
+#     result = []
+#     if len(word) % k == 0:
+#         for i in range(0, len(word), k):
+#             result.append(word[i:i+k])
+#     else:
+#         print("Please provide a word that is evenly divisible by k!")
+#     return result
 
 
-word = str(input("Please provide a word: ").strip())
-k = int(input("Please provide the length of each chunk: ").strip())
-res1 = seperating(word, k)
-finall = choosing(res1)
+# def choosing(res1):
+#     final_result = []
+#     for chunk in res1:
+#         seen = set()
+#         unique_chars = []
+#         for char in chunk:
+#             if char not in seen:
+#                 seen.add(char)
+#                 unique_chars.append(char)
+#         final_result.append(''.join(unique_chars))
+#     return final_result
 
-for i in finall:
-    print(i)
+
+# word = str(input("Please provide a word: ").strip())
+# k = int(input("Please provide the length of each chunk: ").strip())
+# res1 = seperating(word, k)
+# finall = choosing(res1)
+
+# for i in finall:
+#     print(i)
+
+# --------------------- _ 5 _ ---------------------
+
+# def isVovel(word):
+#     cnt_for_al = 0
+#     cnt_for_dig = 0
+
+#     for char in word:
+#         if char.isalpha():
+#             cnt_for_al += 1
+#         elif char.isdigit():
+#             cnt_for_dig += 1
+#     return cnt_for_al, cnt_for_dig
+
+
+# word = str(input("Please write anything you would like to!  ").strip())
+# result = isVovel(word)
+# print(f"There are {result[0]} Alphabet and {result[1]} Digit")
+
+# --------------------- _ 6 _ ---------------------
+
+
+import random
+
+
+def happy(num):
+    setA = {1, 5, 8, 9, 4}
+    setB = {2, 3, 7, 10, 15}
+
+    A = sum(1 for x in setA if x == num)
+    B = sum(1 for x in setB if x == num)
+
+    return A, B
+
+
+for i in range(15):
+    num = random.randint(1, 15)
+    A_count, B_count = happy(num)
+    print(f"Number: {num}, In setA: {A_count}, In setB: {B_count}")
