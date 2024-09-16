@@ -1,13 +1,15 @@
-import React from "react";
-import "./App.css";
+import React, { useState, useEffect } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+import Counter from "./Counter.jsx";
 import Login from "./Login.jsx";
 import Box from "./Box.jsx";
+import "./index.css";
 import logo from "./assets/Logo.svg";
 import logo2 from "./assets/logo@2.svg";
 import zn1 from "./assets/a.svg";
 import zn2 from "./assets/b.svg";
 import zn3 from "./assets/c.svg";
-import zn4 from "./assets/d.svg";
 import main from "./assets/main.svg";
 import laptop from "./assets/laptop.svg";
 import laptop1 from "./assets/laptop1.svg";
@@ -20,14 +22,22 @@ import r2 from "./assets/r2.svg";
 import r3 from "./assets/r3.svg";
 import r4 from "./assets/r4.svg";
 import r5 from "./assets/r5.svg";
-
 import p1 from "./assets/price.svg";
 
 const formatDate = (date) => {
   const options = { day: "2-digit", month: "short", year: "numeric" };
-  return date.toLocaleDateString("en-GB", options); // Example: '03 Aug 2002'
+  return date.toLocaleDateString("en-GB", options);
 };
 
+const formatTime = (date) => {
+  const options = {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+  };
+  return date.toLocaleTimeString("en-GB", options);
+};
 const categoriess = [
   {
     idx: new Date().getTime(),
@@ -35,53 +45,53 @@ const categoriess = [
     value: 2,
   },
   {
-    idx: new Date().getTime(),
+    idx: 2,
     key: "Design",
     value: 21,
   },
   {
-    idx: new Date().getTime(),
+    idx: 3,
     key: "Handmade",
     value: 22,
   },
   {
-    idx: new Date().getTime(),
+    idx: 4,
     key: "Interior",
     value: 214,
   },
   {
-    idx: new Date().getTime(),
+    idx: 5,
     key: "Wood",
     value: 214,
   },
 ];
 const recPost = [
   {
-    idx: new Date().getTime(),
+    idx: 6,
     img: r1,
     topic: "Going all-in with millennial design",
     date: formatDate(new Date()),
   },
   {
-    idx: new Date().getTime(),
+    idx: 7,
     img: r2,
     topic: "Exploring new ways of decorating",
     date: formatDate(new Date()),
   },
   {
-    idx: new Date().getTime(),
+    idx: 8,
     img: r3,
     topic: "Handmade pieces that took time to make",
     date: formatDate(new Date()),
   },
   {
-    idx: new Date().getTime(),
+    idx: 9,
     img: r4,
     topic: "Modern home in Milan",
     date: formatDate(new Date()),
   },
   {
-    idx: new Date().getTime(),
+    idx: 10,
     img: r5,
     topic: "Colorful office redesign",
     date: formatDate(new Date()),
@@ -90,25 +100,25 @@ const recPost = [
 
 const array = [
   {
-    idx: new Date().getTime(),
+    idx: 11,
     img: p1,
     title: "High Quality",
     about: "crafted from top materials",
   },
   {
-    idx: new Date().getTime(),
+    idx: 12,
     img: p1,
     title: "Warranty Protection",
     about: "crafted from top materials",
   },
   {
-    idx: new Date().getTime(),
+    idx: 13,
     img: p1,
     title: "Free Shipping",
     about: "crafted from top materials",
   },
   {
-    idx: new Date().getTime(),
+    idx: 14,
     img: p1,
     title: "24 / 7 Support",
     about: "crafted from top materials",
@@ -116,9 +126,24 @@ const array = [
 ];
 
 const App = () => {
+  const [currentTime, setCurrentTime] = useState(formatTime(new Date()));
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(formatTime(new Date()));
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const [date, setDate] = useState(new Date());
+
+  const onChange = (newDate) => {
+    setDate(newDate);
+  };
   return (
     <div>
-      <header className=" ">
+      <header className="">
         <nav className="ctr bg-[#3c3c3c22]">
           <div className="flex h-[80px] justify-between items-center w-[90%] m-[0_auto]">
             <div>
@@ -167,7 +192,7 @@ const App = () => {
           </div>
         </div>
       </section>
-      <main>
+      <main className="">
         <div className="ctr bg-[#3c3c3c22]">
           <div className="flex justify-center p-[70px] h-full items-start w-full">
             <div className="right-Side flex flex-col justify-center w-[65%] h-full ">
@@ -195,6 +220,7 @@ const App = () => {
                 readMore="Read More"
                 line={line}
               />
+              <Box />
             </div>
             <div className="left-Side p-[40px] flex flex-col gap-[60px] justify-start items-center w-[35%] h-full ">
               <div className="m-[0px] flex  w-full">
@@ -235,14 +261,31 @@ const App = () => {
                   </div>
                 ))}
               </div>
+              <div className="box-for-cnt w-[90%] ">
+                <Counter />
+              </div>
+              <div className="box-time w-[90%] flex justify-center items-center">
+                <div>
+                  <span className="poppins-font text-green-900 text-[60px]">
+                    {formatTime(new Date())}
+                  </span>
+                </div>
+              </div>
+              <div className="w-[90%] flex justify-center items-center">
+                <Calendar
+                  className="calendar-box"
+                  onChange={onChange}
+                  value={date}
+                />
+              </div>
             </div>
           </div>
         </div>
       </main>
-      <section>
+      <section className="">
         <div className="ctr bg-[#eedec9] ">
           <div className="flex p-[110px] items-center justify-between">
-            {array.map((el, idx) => (
+            {array.map((el) => (
               <div key={el.idx} className="flex ">
                 <img src={el.img} alt="img" />
                 <div>
