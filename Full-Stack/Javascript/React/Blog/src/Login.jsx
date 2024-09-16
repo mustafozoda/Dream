@@ -4,11 +4,11 @@ import zn4 from "./assets/d.svg";
 function Login() {
   let count = 0;
   const handleClick = () => {
-    if (count < 3) {
-      console.log(`Hello It's me the number ${count}`);
+    if (count < 10) {
+      console.log(`Hello It's Me The Number ${count}`);
       count += 1;
     } else {
-      console.log("Stop clicking me");
+      console.log("Stop Clicking Me");
     }
   };
 
