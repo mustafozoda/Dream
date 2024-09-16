@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import "./Login.jsx";
 import Box from "./Box.jsx";
 import logo from "./assets/Logo.svg";
 import logo2 from "./assets/logo@2.svg";
@@ -14,6 +15,18 @@ import laptop2 from "./assets/laptop2.svg";
 import underpic from "./assets/underPic.svg";
 import line from "./assets/Line.svg";
 import loop from "./assets/loop.svg";
+import r1 from "./assets/r1.svg";
+import r2 from "./assets/r2.svg";
+import r3 from "./assets/r3.svg";
+import r4 from "./assets/r4.svg";
+import r5 from "./assets/r5.svg";
+
+import p1 from "./assets/price.svg";
+
+const formatDate = (date) => {
+  const options = { day: "2-digit", month: "short", year: "numeric" };
+  return date.toLocaleDateString("en-GB", options); // Example: '03 Aug 2002'
+};
 
 const categoriess = [
   {
@@ -35,6 +48,56 @@ const categoriess = [
   {
     key: "Wood",
     value: 214,
+  },
+];
+const recPost = [
+  {
+    img: r1,
+    topic: "Going all-in with millennial design",
+    date: formatDate(new Date()),
+  },
+  {
+    img: r2,
+    topic: "Exploring new ways of decorating",
+    date: formatDate(new Date()),
+  },
+  {
+    img: r3,
+    topic: "Handmade pieces that took time to make",
+    date: formatDate(new Date()),
+  },
+  {
+    img: r4,
+    topic: "Modern home in Milan",
+    date: formatDate(new Date()),
+  },
+  {
+    img: r5,
+    topic: "Colorful office redesign",
+    date: formatDate(new Date()),
+  },
+];
+
+const array = [
+  {
+    img: p1,
+    title: "High Quality",
+    about: "crafted from top materials",
+  },
+  {
+    img: p1,
+    title: "Warranty Protection",
+    about: "crafted from top materials",
+  },
+  {
+    img: p1,
+    title: "Free Shipping",
+    about: "crafted from top materials",
+  },
+  {
+    img: p1,
+    title: "24 / 7 Support",
+    about: "crafted from top materials",
   },
 ];
 
@@ -63,6 +126,7 @@ const App = () => {
             </div>
             <div className="flex gap-[35px]">
               <img className="cursor-pointer" src={zn4} alt="" />
+              <Login />
               <img className="cursor-pointer" src={zn1} alt="" />
               <img className="cursor-pointer" src={zn3} alt="" />
               <img className="cursor-pointer " src={zn2} alt="" />
@@ -117,7 +181,6 @@ const App = () => {
                 readMore="Read More"
                 line={line}
               />
-              <Box />
             </div>
             <div className="left-Side p-[40px] flex flex-col gap-[60px] justify-start items-center w-[35%] h-full ">
               <div className="m-[0px] flex  w-full">
@@ -131,7 +194,7 @@ const App = () => {
                   <img className="w-[28px]" src={loop} alt="" />
                 </button>
               </div>
-              <div className="  w-[85%] ">
+              <div className="w-[90%] ">
                 <h1 className="text-[24px]   poppins-font">Categories</h1>
                 {categoriess.map((el, idx) => (
                   <div className="flex box-card mt-[15px] p-[10px] justify-between poppins-font-h3 text-[18px] text-[#9F9F9F]">
@@ -142,10 +205,39 @@ const App = () => {
                   </div>
                 ))}
               </div>
+              <div className="w-[90%] ">
+                <h1 className="text-[24px] poppins-font">Recent Posts</h1>
+                {recPost.map((el, idx) => (
+                  <div className=" card-box-2 flex  items-center gap-[15px] mt-[15px] p-[10px]">
+                    <img src={el.img} alt="img" />
+                    <div className="w-[55%]">
+                      <h1 className="poppins-font text-[14px]">{el.topic}</h1>
+                      <h3 className=" pt-[5px] text-[#9F9F9F]">{el.date}</h3>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </main>
+      <section>
+        <div className="ctr bg-[#eedec9] ">
+          <div className="flex p-[110px] items-center justify-between">
+            {array.map((el, idx) => (
+              <div className="flex ">
+                <img src={el.img} alt="img" />
+                <div>
+                  <h1 className="text-[20px] poppins-font">{el.title}</h1>
+                  <h3 className="text-[#898989] text-[16px] poppins-font-h3">
+                    {el.about}
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       <div className="bg-[#3a3434] h-[4000px]"></div>
     </div>
   );
