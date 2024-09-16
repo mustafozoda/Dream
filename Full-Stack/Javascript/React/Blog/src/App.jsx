@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Box from "./Box.jsx";
 import logo from "./assets/Logo.svg";
 import logo2 from "./assets/logo@2.svg";
 import zn1 from "./assets/a.svg";
@@ -13,6 +14,29 @@ import laptop2 from "./assets/laptop2.svg";
 import underpic from "./assets/underPic.svg";
 import line from "./assets/Line.svg";
 import loop from "./assets/loop.svg";
+
+const categoriess = [
+  {
+    key: "Crafts",
+    value: 2,
+  },
+  {
+    key: "Design",
+    value: 21,
+  },
+  {
+    key: "Handmade",
+    value: 22,
+  },
+  {
+    key: "Interior",
+    value: 214,
+  },
+  {
+    key: "Wood",
+    value: 214,
+  },
+];
 
 const App = () => {
   return (
@@ -69,89 +93,36 @@ const App = () => {
         <div className="ctr bg-[#3c3c3c22]">
           <div className="flex justify-center p-[70px] h-full items-start w-full">
             <div className="right-Side flex flex-col justify-center w-[65%] h-full ">
-              <div className="m-[40px]  ">
-                <img className="border rounded-[20px]" src={laptop} alt="" />
-                <img
-                  className="pt-[20px] cursor-pointer"
-                  src={underpic}
-                  alt=""
-                />
-                <h1 className="poppins-font leading-[70px] text-[30px]">
-                  Going all-in with millennial design
-                </h1>
-                <h3 className="poppins-font-h3 text-[18px]  text-justify text-[#9F9F9F]">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Mus mauris vitae ultricies leo integer malesuada nunc. In
-                  nulla posuere sollicitudin aliquam ultrices. Morbi blandit
-                  cursus risus at ultrices mi tempus imperdiet. Libero enim sed
-                  faucibus turpis in. Cursus mattis molestie a iaculis at erat.
-                  Nibh cras pulvinar mattis nunc sed blandit libero.
-                  Pellentesque elit ullamcorper dignissim cras tincidunt.
-                  Pharetra et ultrices neque ornare aenean euismod elementum.
-                </h3>
-                <div className="pt-[40px]">
-                  <h1 className=" text-[16px] poppins-font">Read more</h1>
-                  <img className="pt-[8px]" src={line} alt="Line" />
-                </div>
-              </div>
-              <div className="m-[40px]  ">
-                <img className="border rounded-[20px]" src={laptop1} alt="" />
-                <img
-                  className="pt-[20px] cursor-pointer"
-                  src={underpic}
-                  alt=""
-                />
-                <h1 className="poppins-font leading-[70px] text-[30px]">
-                  Exploring new ways of decorating
-                </h1>
-                <h3 className="poppins-font-h3 text-[18px]  text-justify text-[#9F9F9F]">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Mus mauris vitae ultricies leo integer malesuada nunc. In
-                  nulla posuere sollicitudin aliquam ultrices. Morbi blandit
-                  cursus risus at ultrices mi tempus imperdiet. Libero enim sed
-                  faucibus turpis in. Cursus mattis molestie a iaculis at erat.
-                  Nibh cras pulvinar mattis nunc sed blandit libero.
-                  Pellentesque elit ullamcorper dignissim cras tincidunt.
-                  Pharetra et ultrices neque ornare aenean euismod elementum.
-                </h3>
-                <div className="pt-[40px]">
-                  <h1 className=" text-[16px] poppins-font">Read more</h1>
-                  <img className="pt-[8px]" src={line} alt="Line" />
-                </div>
-              </div>{" "}
-              <div className="m-[40px]  ">
-                <img className="border rounded-[20px]" src={laptop2} alt="" />
-                <img
-                  className="pt-[20px] cursor-pointer"
-                  src={underpic}
-                  alt=""
-                />
-                <h1 className="poppins-font leading-[70px] text-[30px]">
-                  Handmade pieces that took time to make
-                </h1>
-                <h3 className="poppins-font-h3 text-[18px]  text-justify text-[#9F9F9F]">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Mus mauris vitae ultricies leo integer malesuada nunc. In
-                  nulla posuere sollicitudin aliquam ultrices. Morbi blandit
-                  cursus risus at ultrices mi tempus imperdiet. Libero enim sed
-                  faucibus turpis in. Cursus mattis molestie a iaculis at erat.
-                  Nibh cras pulvinar mattis nunc sed blandit libero.
-                  Pellentesque elit ullamcorper dignissim cras tincidunt.
-                  Pharetra et ultrices neque ornare aenean euismod elementum.
-                </h3>
-                <div className="pt-[40px]">
-                  <h1 className=" text-[16px] poppins-font">Read more</h1>
-                  <img className="pt-[8px]" src={line} alt="Line" />
-                </div>
-              </div>
+              <Box
+                img={laptop}
+                img2={underpic}
+                headerWord="Going all-in with millennial design"
+                paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer malesuada nunc. In nulla posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar mattis nunc sed blandit libero. Pellentesque elit ullamcorper dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean euismod elementum."
+                readMore="Read More"
+                line={line}
+              />
+              <Box
+                img={laptop1}
+                img2={underpic}
+                headerWord="Exploring new ways of decorating"
+                paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer malesuada nunc. In nulla posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar mattis nunc sed blandit libero. Pellentesque elit ullamcorper dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean euismod elementum."
+                readMore="Read More"
+                line={line}
+              />
+              <Box
+                img={laptop2}
+                img2={underpic}
+                headerWord="Handmade pieces that took time to make"
+                paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer malesuada nunc. In nulla posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar mattis nunc sed blandit libero. Pellentesque elit ullamcorper dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean euismod elementum."
+                readMore="Read More"
+                line={line}
+              />
+              <Box />
             </div>
-            <div className="left-Side flex flex-col justify-start items-start w-[35%] h-full ">
-              <div className="m-[40px] flex pr-[40px] w-full">
+            <div className="left-Side p-[40px] flex flex-col gap-[60px] justify-start items-center w-[35%] h-full ">
+              <div className="m-[0px] flex  w-full">
                 <input
-                  className=" h-[60px] border-none w-[80%] rounded-r-none rounded-[10px]"
+                  className=" h-[60px] w-full rounded-r-none rounded-[10px]"
                   type="search"
                   name="search"
                   id="#1"
@@ -159,6 +130,17 @@ const App = () => {
                 <button className=" bg-white flex items-center justify-center  w-[20%]  h-[60px] rounded-[10px] rounded-l-none">
                   <img className="w-[28px]" src={loop} alt="" />
                 </button>
+              </div>
+              <div className="  w-[85%] ">
+                <h1 className="text-[24px]   poppins-font">Categories</h1>
+                {categoriess.map((el, idx) => (
+                  <div className="flex box-card mt-[15px] p-[10px] justify-between poppins-font-h3 text-[18px] text-[#9F9F9F]">
+                    <h1 className="" key={idx}>
+                      {el.key}
+                    </h1>
+                    <span key={idx}>{el.value}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

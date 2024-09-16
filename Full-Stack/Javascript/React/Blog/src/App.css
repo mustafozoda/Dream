@@ -15,3 +15,11 @@
   font-weight: 500;
   font-style: normal;
 }
+.box-card {
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px hsla(0, 1%, 44%, 0.673);
+}
+.box-card:hover {
+  cursor: pointer;
+  box-shadow: 0px 5px 10px hsla(0, 0%, 23%, 0.673);
+}
