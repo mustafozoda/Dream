@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import "./Login.jsx";
+import Login from "./Login.jsx";
 import Box from "./Box.jsx";
 import logo from "./assets/Logo.svg";
 import logo2 from "./assets/logo@2.svg";
@@ -30,48 +30,58 @@ const formatDate = (date) => {
 
 const categoriess = [
   {
+    idx: new Date().getTime(),
     key: "Crafts",
     value: 2,
   },
   {
+    idx: new Date().getTime(),
     key: "Design",
     value: 21,
   },
   {
+    idx: new Date().getTime(),
     key: "Handmade",
     value: 22,
   },
   {
+    idx: new Date().getTime(),
     key: "Interior",
     value: 214,
   },
   {
+    idx: new Date().getTime(),
     key: "Wood",
     value: 214,
   },
 ];
 const recPost = [
   {
+    idx: new Date().getTime(),
     img: r1,
     topic: "Going all-in with millennial design",
     date: formatDate(new Date()),
   },
   {
+    idx: new Date().getTime(),
     img: r2,
     topic: "Exploring new ways of decorating",
     date: formatDate(new Date()),
   },
   {
+    idx: new Date().getTime(),
     img: r3,
     topic: "Handmade pieces that took time to make",
     date: formatDate(new Date()),
   },
   {
+    idx: new Date().getTime(),
     img: r4,
     topic: "Modern home in Milan",
     date: formatDate(new Date()),
   },
   {
+    idx: new Date().getTime(),
     img: r5,
     topic: "Colorful office redesign",
     date: formatDate(new Date()),
@@ -80,21 +90,25 @@ const recPost = [
 
 const array = [
   {
+    idx: new Date().getTime(),
     img: p1,
     title: "High Quality",
     about: "crafted from top materials",
   },
   {
+    idx: new Date().getTime(),
     img: p1,
     title: "Warranty Protection",
     about: "crafted from top materials",
   },
   {
+    idx: new Date().getTime(),
     img: p1,
     title: "Free Shipping",
     about: "crafted from top materials",
   },
   {
+    idx: new Date().getTime(),
     img: p1,
     title: "24 / 7 Support",
     about: "crafted from top materials",
@@ -125,7 +139,7 @@ const App = () => {
               </a>
             </div>
             <div className="flex gap-[35px]">
-              <img className="cursor-pointer" src={zn4} alt="" />
+              {/* <img className="cursor-pointer" src={zn4} alt="" /> */}
               <Login />
               <img className="cursor-pointer" src={zn1} alt="" />
               <img className="cursor-pointer" src={zn3} alt="" />
@@ -197,10 +211,11 @@ const App = () => {
               <div className="w-[90%] ">
                 <h1 className="text-[24px]   poppins-font">Categories</h1>
                 {categoriess.map((el, idx) => (
-                  <div className="flex box-card mt-[15px] p-[10px] justify-between poppins-font-h3 text-[18px] text-[#9F9F9F]">
-                    <h1 className="" key={idx}>
-                      {el.key}
-                    </h1>
+                  <div
+                    key={el.idx}
+                    className="flex box-card mt-[15px] p-[10px] justify-between poppins-font-h3 text-[18px] text-[#9F9F9F]"
+                  >
+                    <h1 className="">{el.key}</h1>
                     <span key={idx}>{el.value}</span>
                   </div>
                 ))}
@@ -208,7 +223,10 @@ const App = () => {
               <div className="w-[90%] ">
                 <h1 className="text-[24px] poppins-font">Recent Posts</h1>
                 {recPost.map((el, idx) => (
-                  <div className=" card-box-2 flex  items-center gap-[15px] mt-[15px] p-[10px]">
+                  <div
+                    key={el.idx}
+                    className=" card-box-2 flex  items-center gap-[15px] mt-[15px] p-[10px]"
+                  >
                     <img src={el.img} alt="img" />
                     <div className="w-[55%]">
                       <h1 className="poppins-font text-[14px]">{el.topic}</h1>
@@ -225,7 +243,7 @@ const App = () => {
         <div className="ctr bg-[#eedec9] ">
           <div className="flex p-[110px] items-center justify-between">
             {array.map((el, idx) => (
-              <div className="flex ">
+              <div key={el.idx} className="flex ">
                 <img src={el.img} alt="img" />
                 <div>
                   <h1 className="text-[20px] poppins-font">{el.title}</h1>
