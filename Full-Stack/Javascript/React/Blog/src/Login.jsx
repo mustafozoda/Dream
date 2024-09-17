@@ -1,8 +1,8 @@
 import React from "react";
 import zn4 from "./assets/d.svg";
 
+let count = 0;
 function Login() {
-  let count = 0;
   const handleClick = () => {
     if (count < 10) {
       console.log(`Hello It's Me The Number ${count}`);

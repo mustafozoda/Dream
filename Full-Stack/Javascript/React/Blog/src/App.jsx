@@ -4,7 +4,9 @@ import "react-calendar/dist/Calendar.css";
 import Counter from "./Counter.jsx";
 import Login from "./Login.jsx";
 import Box from "./Box.jsx";
+import Input from "./Input.jsx";
 import "./index.css";
+// ------------- //  ------------- // -------------
 import logo from "./assets/Logo.svg";
 import logo2 from "./assets/logo@2.svg";
 import zn1 from "./assets/a.svg";
@@ -28,7 +30,6 @@ const formatDate = (date) => {
   const options = { day: "2-digit", month: "short", year: "numeric" };
   return date.toLocaleDateString("en-GB", options);
 };
-
 const formatTime = (date) => {
   const options = {
     hour: "2-digit",
@@ -97,7 +98,6 @@ const recPost = [
     date: formatDate(new Date()),
   },
 ];
-
 const array = [
   {
     idx: 11,
@@ -124,9 +124,9 @@ const array = [
     about: "crafted from top materials",
   },
 ];
-
 const App = () => {
   const [currentTime, setCurrentTime] = useState(formatTime(new Date()));
+  const [date, setDate] = useState(new Date());
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -136,11 +136,10 @@ const App = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const [date, setDate] = useState(new Date());
-
   const onChange = (newDate) => {
     setDate(newDate);
   };
+
   return (
     <div>
       <header className="">
@@ -221,9 +220,17 @@ const App = () => {
                 line={line}
               />
               <Box />
+              <Box
+                img={laptop}
+                img2={underpic}
+                headerWord="Going all-in with millennial design"
+                paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer malesuada nunc. In nulla posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar mattis nunc sed blandit libero. Pellentesque elit ullamcorper dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean euismod elementum."
+                readMore="Read More"
+                line={line}
+              />
             </div>
             <div className="left-Side p-[40px] flex flex-col gap-[60px] justify-start items-center w-[35%] h-full ">
-              <div className="m-[0px] flex  w-full">
+              <div className="w-[90%] flex ">
                 <input
                   className=" h-[60px] w-full rounded-r-none rounded-[10px]"
                   type="search"
@@ -277,6 +284,9 @@ const App = () => {
                   onChange={onChange}
                   value={date}
                 />
+              </div>
+              <div className="box-for-input w-[90%] flex justify-start items-center">
+                <Input />
               </div>
             </div>
           </div>
