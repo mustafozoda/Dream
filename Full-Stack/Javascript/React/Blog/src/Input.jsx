@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 
 function Input() {
-  const [name, setName] = useState("");
-  const [age, setAge] = useState("");
+  const [name, setName] = useState("Unknown");
+  const [age, setAge] = useState(0);
+  const [color, setColor] = useState("#FF0000");
+
   const handleName = (e) => {
     setName(e.target.value);
   };
   const handleAge = (e) => {
     setAge(e.target.value);
+  };
+
+  const handleNewColor = (e) => {
+    setColor(e.target.value);
   };
 
   return (
@@ -23,7 +29,9 @@ function Input() {
         />
         <h1 className="pt-[20px]">
           Your Name is: &nbsp;
-          {name}
+          <span style={{ color: color }} className="">
+            {name}
+          </span>
         </h1>
       </div>
       <div>
@@ -36,8 +44,18 @@ function Input() {
         />
         <h1 className="pt-[20px]">
           Your Age is: &nbsp;
-          <span>{age}</span>
+          <span style={{ color: color }} className="">
+            {age}
+          </span>
         </h1>
+      </div>
+      <div>
+        <input
+          className="pick-up-color-inp w-full"
+          type="color"
+          onChange={handleNewColor}
+          value={color}
+        />
       </div>
     </div>
   );

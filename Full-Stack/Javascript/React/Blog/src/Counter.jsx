@@ -12,7 +12,9 @@ function Counter() {
   };
 
   const increment = () => {
-    setCount(count + 1);
+    setCount((prev) => prev + 1);
+    setCount((prev) => prev + 1);
+    // setCount(count + 1);
   };
 
   const getColor = () => {
