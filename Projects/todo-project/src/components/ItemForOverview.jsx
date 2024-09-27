@@ -43,7 +43,6 @@ export default function ItemForOverview({ el, data, setData }) {
       </div>
       <div className="absolute right-[10px] top-[10px]">
         <Delete filteredEl={el} data={data} setData={setData} />
-        <h1>{el.id}</h1>
       </div>
     </div>
   );
