@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-image: url("/bg-img.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.ctr {
+  width: 1536px;
+  margin: 0 auto;
+}
+.header {
+  box-shadow: 0 4px 8px hsla(204, 3%, 34%, 0.778);
+}
+
+.item-box::-webkit-scrollbar {
+  display: none;
+}
+.search-form-inp,
+.search-form-btn {
+  outline: none;
+  box-shadow: 0px 5px 7px hsl(0, 1%, 23%);
+}
+
+.item-card {
+  border: 1px solid rgb(54, 54, 54);
+  /* box-shadow: 0 5px 10px hsl(0, 0%, 0%); */
+  box-shadow: 0 5px 5px hsl(0, 18%, 50%);
+}
+
+.modal-win {
+  background-color: rgba(0, 0, 0, 0.243);
+}
+.modal-win-add {
+  background-color: rgba(0, 0, 0, 0.243);
+}
+
+.inactive-style {
+  border-radius: 10px;
+  padding: 10px;
+}
+.inactive-style:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+.active-style {
+  color: #ff0000;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+
+.kudakbozi div {
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  transition: background-color 0.1s ease-in-out;
+}
+.kudakbozi div:hover {
+  background-color: aliceblue;
+  box-shadow: 0px 0px 10px hsl(132, 100%, 50%);
+  background-color: aliceblue;
+  transition-delay: 0s;
+}
+.kudakbozi div:not(:hover) {
+  transition-delay: 0.4s;
+}
+
+@media (max-width: 1500px) {
+  .ctr {
+    width: 100vw;
+  }
+}
