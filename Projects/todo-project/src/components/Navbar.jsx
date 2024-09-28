@@ -7,20 +7,20 @@ export default function Navbar() {
   const location = useLocation();
   return (
     <div className="flex flex-col gap-[40px] p-[20px]">
-      <div className="flex flex-col items-center justify-center text-center">
+      <div className="phone:hidden flex flex-col items-center justify-center text-center">
         <img className="w-[100px] rounded-[200px]" src={logo} alt="img" />
         <div className="text-white">
           <h1>Mustafozoda Sharifbek</h1>
           <h2>mustaffozode@gmail.com</h2>
         </div>
       </div>
-      <div className="flex flex-col gap-[10px] text-white">
+      <div className="phone:pt-[40px] flex flex-col gap-[10px] text-white">
         <Link
           to="/"
           className={`flex items-center justify-start gap-2 ${location.pathname === "/" ? "active-style" : "inactive-style"}`}
         >
           <DashboardOutlinedIcon />
-          My Tasks
+          <span className="phone:hidden">My Tasks</span>
         </Link>
         <Link
           to="/taskdashboards"
@@ -31,7 +31,7 @@ export default function Navbar() {
           }`}
         >
           <ChecklistRoundedIcon />
-          Task Dashboards
+          <span className="phone:hidden">Task Dashboards</span>
         </Link>
         <Link
           to="/tasksoverview"
@@ -42,7 +42,7 @@ export default function Navbar() {
           }`}
         >
           <AnalyticsOutlinedIcon />
-          Task Overview
+          <span className="phone:hidden">Task Overview</span>
         </Link>
       </div>
       <div className="kudakbozi grid grid-cols-5">

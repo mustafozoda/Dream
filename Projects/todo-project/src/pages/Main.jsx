@@ -16,7 +16,7 @@ export default function Main({ data, setData }) {
 
   return (
     <div className="flex h-full w-full">
-      <section className="h-full w-[20%] bg-red-800">
+      <section className="w-[20%] bg-red-800">
         <Navbar />
       </section>
       <section className="relative w-[80%] bg-white">

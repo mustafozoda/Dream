@@ -9,8 +9,8 @@ export default function Dashboard({
 }) {
   return (
     <div className="">
-      <div className="flex items-center justify-between px-[10px]">
-        <div>
+      <div className="phone:justify-end flex items-center justify-between px-[10px]">
+        <div className="phone:hidden">
           <h1 className="text-[35px]">
             Welcome back, <span className="text-red-700">Mustaffozoda</span>
           </h1>
@@ -26,7 +26,7 @@ export default function Dashboard({
         </div>
       </div>
       <div className=" ">
-        <div className="item-box grid max-h-[92vh] gap-[20px] overflow-auto border border-x-[0px] border-y-red-700 p-[10px] sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        <div className="item-box phone:grid-cols-1 grid max-h-[92vh] grid-cols-3 gap-[20px] overflow-auto border border-x-[0px] border-y-red-700 p-[10px]">
           {data.map((el) => (
             <Item
               setIdx={setIdx}

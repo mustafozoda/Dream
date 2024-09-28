@@ -3,7 +3,7 @@ import Search from "./Search";
 import Logo from "./Logo";
 export default function Header({ data, setData, todo }) {
   return (
-    <div className="flex items-center justify-between bg-[#f2f2f2] px-[55px] py-[8px]">
+    <div className="phone:px-[10px] flex items-center justify-between bg-[#f2f2f2] px-[55px] py-[8px]">
       <div className="">
         <Logo />
       </div>
