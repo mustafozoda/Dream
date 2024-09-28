@@ -25,7 +25,8 @@ export default function ConfirmDeleteModal({
           >
             <h2 className="text-[30px]">Are you sure?</h2>
             <h5 className="mb-[10px]">
-              Are you sure you want to delete this item? You can't undo this
+              Are you sure you want to delete this item? This action cannot be
+              undone.
             </h5>
             <div className="flex w-full items-center justify-between px-[15px]">
               <button
