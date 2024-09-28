@@ -47,17 +47,17 @@ export default function ModalWinEdit({
   return (
     <div
       onClick={() => setEditModalState(false)}
-      className="modal-win-add absolute left-0 top-[0px] z-[100] flex h-[100vh] w-[100%] items-start justify-center"
+      className="modal-win-add absolute left-0 top-[0px] z-[100] flex h-[103%] w-[100%] items-start justify-center"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="mt-[60px] w-[65%] rounded-[20px] bg-white p-[20px]"
+        className="mt-[70px] h-[510px] w-[90%] rounded-[20px] bg-white p-[20px] laptop:w-[75%] laptop:px-[60px] laptop:py-[40px]"
       >
         <form
           onSubmit={handleSubmit}
-          className="flex w-full items-start justify-between border border-red-700 p-[15px]"
+          className="flex h-full w-full flex-col items-start justify-between border border-red-700 p-[15px] text-[14px] tablet:flex-row laptop:p-[25px]"
         >
-          <div className="w-[60%]">
+          <div className="w-full tablet:w-[60%]">
             <div className="flex flex-col">
               <label>Title</label>
               <input
@@ -91,12 +91,12 @@ export default function ModalWinEdit({
                 className="w-full rounded-[5px] border p-[5px]"
               />
             </div>
-            <div className="my-[10px] flex items-center gap-[10%]">
-              <label>Priority:</label>
-              <div className="flex items-center gap-4">
-                <label className="tems-center flex flex-row justify-center text-[15px] text-[#A1A3AB]">
+            <div className="my-[10px] items-center gap-[10%] phone:flex">
+              <label className="">Priority:</label>
+              <div className="flex items-center gap-[10px] pt-[10px] text-[10px] phone:pt-[0px] tablet:gap-4 tablet:text-[16px]">
+                <label className="tems-center flex flex-row justify-center text-[#A1A3AB]">
                   <input
-                    type="radio"
+                    type="checkbox"
                     name="priority"
                     value="low"
                     checked={editTargetItemState.priority === "low"}
@@ -106,9 +106,9 @@ export default function ModalWinEdit({
                   Low
                 </label>
 
-                <label className="flex flex-row items-center justify-center text-[15px] text-[#A1A3AB]">
+                <label className="flex flex-row items-center justify-center text-[#A1A3AB]">
                   <input
-                    type="radio"
+                    type="checkbox"
                     name="priority"
                     value="medium"
                     checked={editTargetItemState.priority === "medium"}
@@ -118,9 +118,9 @@ export default function ModalWinEdit({
                   Medium
                 </label>
 
-                <label className="flex flex-row items-center justify-center text-[15px] text-[#A1A3AB]">
+                <label className="flex flex-row items-center justify-center text-[#A1A3AB]">
                   <input
-                    type="radio"
+                    type="checkbox"
                     name="priority"
                     value="high"
                     checked={editTargetItemState.priority === "high"}
@@ -153,9 +153,9 @@ export default function ModalWinEdit({
               />
             </div>
           </div>
-          <div className="flex w-[40%] flex-col items-end justify-between gap-[63px]">
+          <div className="flex h-full w-full flex-row items-end justify-between tablet:w-[40%] tablet:flex-col tablet:gap-0">
             <div>
-              <img className="" src={addTodoImg} alt="" />
+              <img className="hidden tablet:block" src={addTodoImg} alt="" />
             </div>
             <div>
               <button className="flex h-[40px] w-[100px] items-center justify-between rounded-[6px] border border-red-700 px-[10px] text-red-700 hover:bg-red-700 hover:text-white">

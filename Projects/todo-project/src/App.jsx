@@ -9,11 +9,11 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="flex h-[150vh] flex-col">
+      <div className="flex flex-col tablet:h-full">
         <section className="ctr header fixed left-0 right-0 top-0 z-[102]">
           <Header data={data} setData={setData} todo={todo} />
         </section>
-        <section className="ctr main h-full bg-white pt-[40px] laptop:pt-[64px]">
+        <section className="ctr main bg-white pt-[40px] laptop:pt-[64px]">
           <Main data={data} setData={setData} />
         </section>
       </div>

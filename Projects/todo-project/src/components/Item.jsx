@@ -28,7 +28,7 @@ export default function Item({ el, data, setData, setModalState, setIdx }) {
         <MoreVertIcon sx={{ color: red[700], fontSize: 25 }} />
       </button>
       <div className="flex w-full items-center justify-between laptop:items-start">
-        <div className="w-[30%]">
+        <div className="flex w-[30%] items-center justify-center">
           <img
             className="w-[100px] object-contain"
             src={el.completed ? completed : incompleted}
@@ -36,7 +36,7 @@ export default function Item({ el, data, setData, setModalState, setIdx }) {
           />
         </div>
         <div className="w-[65%]">
-          <h1 className="overflow-hidden truncate text-ellipsis whitespace-nowrap text-red-900 desktop:text-[20px]">
+          <h1 className="overflow-hidden truncate text-ellipsis whitespace-nowrap text-[17px] text-red-900 desktop:text-[22px]">
             {el.title}
           </h1>
           <h2 className="overflow-hidden truncate text-ellipsis whitespace-nowrap text-[10px] text-[#747474] desktop:text-[15px]">

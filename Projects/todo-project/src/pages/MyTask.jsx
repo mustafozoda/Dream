@@ -15,10 +15,10 @@ export default function Dashboard({
             Welcome back, <span className="text-red-700">Mustaffozoda</span>
           </h1>
         </div>
-        <div className="items-center justify-center tablet:flex tablet:w-fit">
+        <div className="w-full items-center justify-center tablet:flex tablet:w-fit">
           <button
             onClick={() => setAddModalState(true)}
-            className="flex h-[35px] w-[270px] items-center justify-between rounded-[10px] border border-red-700 px-[10px] text-red-700 hover:bg-red-700 hover:text-white tablet:w-[160px]"
+            className="flex h-[35px] w-full items-center justify-between rounded-[10px] border border-red-700 px-[10px] text-red-700 hover:bg-red-700 hover:text-white tablet:w-[160px]"
           >
             Add New Task
             <AddTaskIcon />

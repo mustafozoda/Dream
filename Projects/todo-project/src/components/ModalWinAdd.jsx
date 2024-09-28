@@ -35,19 +35,19 @@ export default function ModalWinAdd({ setAddModalState, setData }) {
   return (
     <div
       onClick={() => setAddModalState(false)}
-      className="modal-win-add absolute left-0 top-[0px] z-[100] flex h-full w-[100%] items-start justify-center"
+      className="modal-win-add absolute left-0 top-[0px] z-[100] flex h-[103%] w-[100%] items-start justify-center"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="mt-[70px] w-[75%] rounded-[20px] bg-white px-[60px] py-[40px]"
+        className="mt-[70px] h-[500px] w-[90%] rounded-[20px] bg-white p-[20px] laptop:w-[75%] laptop:px-[60px] laptop:py-[40px]"
       >
         <form
           onSubmit={handleSubmit}
-          className="flex w-full items-start justify-between border border-red-700 p-[25px]"
+          className="flex h-full w-full flex-col items-start justify-between border border-red-700 p-[15px] text-[14px] tablet:flex-row laptop:p-[25px]"
         >
-          <div className="w-[60%]">
+          <div className="w-full tablet:w-[60%]">
             <div className="flex flex-col">
-              <label>Title</label>
+              <label>Title:</label>
               <input
                 type="text"
                 name="title"
@@ -58,7 +58,7 @@ export default function ModalWinAdd({ setAddModalState, setData }) {
               />
             </div>
             <div className="flex flex-col">
-              <label>Description</label>
+              <label>Description:</label>
               <input
                 type="text"
                 name="description"
@@ -69,7 +69,7 @@ export default function ModalWinAdd({ setAddModalState, setData }) {
               />
             </div>
             <div className="flex flex-col">
-              <label>Due Date</label>
+              <label>Due Date:</label>
               <input
                 type="date"
                 name="dueDate"
@@ -79,10 +79,10 @@ export default function ModalWinAdd({ setAddModalState, setData }) {
                 className="w-full rounded-[5px] border p-[5px]"
               />
             </div>
-            <div className="my-[10px] flex items-center gap-[10%]">
-              <label>Priority:</label>
-              <div className="flex items-center gap-4">
-                <label className="tems-center flex flex-row justify-center text-[15px] text-[#A1A3AB]">
+            <div className="my-[10px] items-center gap-[10%] phone:flex">
+              <label className="">Priority:</label>
+              <div className="flex items-center gap-[10px] pt-[10px] text-[10px] phone:pt-[0px] tablet:gap-4 tablet:text-[16px]">
+                <label className="tems-center flex flex-row justify-center text-[#A1A3AB]">
                   <input
                     type="checkbox"
                     name="priority"
@@ -94,7 +94,7 @@ export default function ModalWinAdd({ setAddModalState, setData }) {
                   Low
                 </label>
 
-                <label className="flex flex-row items-center justify-center text-[15px] text-[#A1A3AB]">
+                <label className="flex flex-row items-center justify-center text-[#A1A3AB]">
                   <input
                     type="checkbox"
                     name="priority"
@@ -106,7 +106,7 @@ export default function ModalWinAdd({ setAddModalState, setData }) {
                   Medium
                 </label>
 
-                <label className="flex flex-row items-center justify-center text-[15px] text-[#A1A3AB]">
+                <label className="flex flex-row items-center justify-center text-[#A1A3AB]">
                   <input
                     type="checkbox"
                     name="priority"
@@ -120,7 +120,7 @@ export default function ModalWinAdd({ setAddModalState, setData }) {
               </div>
             </div>
             <div className="flex flex-col">
-              <label>Category</label>
+              <label>Category:</label>
               <input
                 type="text"
                 name="category"
@@ -131,7 +131,7 @@ export default function ModalWinAdd({ setAddModalState, setData }) {
               />
             </div>
             <div className="flex flex-col">
-              <label>Notes</label>
+              <label>Notes:</label>
               <textarea
                 name="notes"
                 placeholder="Start writing here....."
@@ -141,9 +141,9 @@ export default function ModalWinAdd({ setAddModalState, setData }) {
               />
             </div>
           </div>
-          <div className="flex w-[40%] flex-col items-end justify-between gap-[63px]">
+          <div className="flex h-full w-full flex-row items-end justify-between tablet:w-[40%] tablet:flex-col tablet:gap-0">
             <div>
-              <img className="" src={addTodoImg} alt="" />
+              <img className="hidden tablet:block" src={addTodoImg} alt="" />
             </div>
             <div className="">
               {/* <BackButton onClick={() => setAddModalState(false)} /> */}

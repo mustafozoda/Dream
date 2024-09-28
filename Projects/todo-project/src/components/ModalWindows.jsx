@@ -16,7 +16,7 @@ export default function ModalWindows({
   return (
     <div
       onClick={() => setModalState(false)}
-      className="modal-win absolute left-0 top-0 z-[100] flex h-full w-[100%] items-start justify-end"
+      className="modal-win fixed left-0 top-0 z-[100] flex h-full w-[100%] items-start justify-end laptop:absolute"
     >
       <div
         onClick={(e) => e.stopPropagation()}
