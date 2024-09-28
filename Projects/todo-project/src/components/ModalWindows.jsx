@@ -11,6 +11,7 @@ export default function ModalWindows({
   setModalState,
   filteredEl,
   setEditModalState,
+  setModal,
 }) {
   return (
     <div
@@ -61,6 +62,7 @@ export default function ModalWindows({
                     filteredEl={filteredEl}
                     setData={setData}
                     data={data}
+                    setModal={setModal}
                   />
                   <Edit
                     setEditModalState={setEditModalState}

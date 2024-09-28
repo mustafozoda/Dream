@@ -10,6 +10,7 @@ export default function Pages({
   setModalState,
   setAddModalState,
   setIdx,
+  setModal,
 }) {
   return (
     <div className="p-[40px]">
@@ -40,7 +41,9 @@ export default function Pages({
         />
         <Route
           path="/tasksoverview"
-          element={<TasksOverview data={data} setData={setData} />}
+          element={
+            <TasksOverview setModal={setModal} data={data} setData={setData} />
+          }
         />
       </Routes>
     </div>

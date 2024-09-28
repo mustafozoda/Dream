@@ -26,7 +26,7 @@ import all from "../assets/all.png";
   */
 }
 
-export default function TasksOverview({ data, setData }) {
+export default function TasksOverview({ data, setModal, setData }) {
   const countTasks = (data, predicate) => data.filter(predicate).length;
 
   const priorityCounts = ["High", "Medium", "Low"].map((priority) => ({
@@ -58,7 +58,7 @@ export default function TasksOverview({ data, setData }) {
           </div>
           <div className="m-[5px] flex h-full w-[50%] items-center justify-center">
             {data.length > 0 ? (
-              <SwiperTask data={data} setData={setData} />
+              <SwiperTask setModal={setModal} data={data} setData={setData} />
             ) : (
               <img className="h-[160px]" src={all} alt="all" />
             )}

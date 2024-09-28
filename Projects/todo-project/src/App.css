@@ -51,7 +51,9 @@ body::-webkit-scrollbar {
 .modal-win-add {
   background-color: rgba(0, 0, 0, 0.243);
 }
-
+.modal-confirm-delete {
+  background-color: rgba(0, 0, 0, 0.611);
+}
 .inactive-style {
   border-radius: 10px;
   padding: 10px;

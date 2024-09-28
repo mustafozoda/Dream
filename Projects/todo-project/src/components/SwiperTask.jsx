@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import "swiper/css";
 import ItemForOverview from "./ItemForOverview";
 
-export default function SwiperTask({ data, setData }) {
+export default function SwiperTask({ data, setData, setModal }) {
   return (
     <Swiper
       effect={"coverflow"}
@@ -25,7 +25,12 @@ export default function SwiperTask({ data, setData }) {
     >
       {data.map((el) => (
         <SwiperSlide key={el.id} className="w-full">
-          <ItemForOverview data={data} el={el} setData={setData} />
+          <ItemForOverview
+            data={data}
+            setModal={setModal}
+            el={el}
+            setData={setData}
+          />
         </SwiperSlide>
       ))}
     </Swiper>
