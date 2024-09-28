@@ -32,7 +32,7 @@ export default function TaskDashboards({
     <div>
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-[35px]">
+          <h1 className="phone:hidden text-[35px]">
             Task <span className="text-red-700">Dashboards</span>
           </h1>
         </div>
