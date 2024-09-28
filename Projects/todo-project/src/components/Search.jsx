@@ -17,7 +17,7 @@ export default function Search({ setData, data, todo }) {
   // console.log(todo);
 
   return (
-    <div className="p-[0_40px]">
+    <div className="">
       <form onSubmit={handleSearchSubmit} className="search-form flex">
         <input
           placeholder="Search your task here... "

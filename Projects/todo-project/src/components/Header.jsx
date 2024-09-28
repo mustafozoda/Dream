@@ -3,14 +3,14 @@ import Search from "./Search";
 import Logo from "./Logo";
 export default function Header({ data, setData, todo }) {
   return (
-    <div className="phone:px-[10px] flex items-center justify-between bg-[#f2f2f2] px-[55px] py-[8px]">
+    <div className="flex items-center gap-[30px] bg-[#f2f2f2] px-[10px] py-[8px] tablet:px-[20px]">
       <div className="">
         <Logo />
       </div>
-      <div className="w-[60%]">
+      <div className="w-full">
         <Search data={data} setData={setData} todo={todo} />
       </div>
-      <div className="">
+      <div className="hidden laptop:block">
         <DateDisplay />
       </div>
     </div>

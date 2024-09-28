@@ -47,7 +47,7 @@ export default function TasksOverview({ data, setModal, setData }) {
   return (
     <div className="w-[100%]">
       <div className="flex items-center justify-between">
-        <h1 className="text-[35px]">
+        <h1 className="hidden tablet:block tablet:text-[20px] laptop:text-[30px]">
           Tasks <span className="text-red-700">Overview</span>
         </h1>
       </div>

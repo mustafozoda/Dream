@@ -13,7 +13,7 @@ export default function Pages({
   setModal,
 }) {
   return (
-    <div className="phone:p-[10px] p-[40px]">
+    <div className="p-[10px] laptop:p-[20px]">
       <Routes>
         <Route
           path="/"

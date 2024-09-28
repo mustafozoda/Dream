@@ -31,8 +31,8 @@ export default function TaskDashboards({
   return (
     <div>
       <div className="flex items-center justify-between">
-        <div>
-          <h1 className="phone:hidden text-[35px]">
+        <div className="hidden tablet:block tablet:text-[20px] laptop:text-[30px]">
+          <h1>
             Task <span className="text-red-700">Dashboards</span>
           </h1>
         </div>
@@ -46,7 +46,7 @@ export default function TaskDashboards({
         </div>
       </div>
       <div>
-        <div className="item-box phone:grid-cols-1 grid max-h-[92vh] grid-cols-3 gap-[20px] overflow-auto border border-x-[0px] border-y-red-700 p-[10px]">
+        <div className="item-box grid max-h-[92vh] grid-cols-3 gap-[20px] overflow-auto border border-x-[0px] border-y-red-700 p-[10px]">
           {filteredData().length > 0 ? (
             filteredData().map((el) => (
               <Item

@@ -9,16 +9,16 @@ export default function Dashboard({
 }) {
   return (
     <div className="">
-      <div className="phone:justify-end flex items-center justify-between px-[10px]">
-        <div className="phone:hidden">
-          <h1 className="text-[35px]">
+      <div className="flex items-center justify-center px-[10px] py-[10px] tablet:justify-between">
+        <div className="hidden tablet:block tablet:text-[20px] laptop:text-[30px]">
+          <h1>
             Welcome back, <span className="text-red-700">Mustaffozoda</span>
           </h1>
         </div>
-        <div className="flex h-[64px] items-center justify-center">
+        <div className="items-center justify-center phone:w-full tablet:flex tablet:w-fit">
           <button
             onClick={() => setAddModalState(true)}
-            className="flex h-[40px] w-[160px] items-center justify-between rounded-[10px] border border-red-700 px-[10px] text-red-700 hover:bg-red-700 hover:text-white"
+            className="flex h-[35px] w-[270px] items-center justify-between rounded-[10px] border border-red-700 px-[10px] text-red-700 hover:bg-red-700 hover:text-white tablet:w-[160px]"
           >
             Add New Task
             <AddTaskIcon />
@@ -26,7 +26,7 @@ export default function Dashboard({
         </div>
       </div>
       <div className=" ">
-        <div className="item-box phone:grid-cols-1 grid max-h-[92vh] grid-cols-3 gap-[20px] overflow-auto border border-x-[0px] border-y-red-700 p-[10px]">
+        <div className="item-box grid max-h-[92vh] grid-cols-1 gap-[20px] overflow-auto border border-x-[0px] border-y-red-700 p-[10px] tablet:grid-cols-2 laptop:grid-cols-3">
           {data.map((el) => (
             <Item
               setIdx={setIdx}

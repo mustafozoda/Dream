@@ -17,7 +17,7 @@ export default function Item({ el, data, setData, setModalState, setIdx }) {
     }
   };
   return (
-    <div className="item-card relative flex h-[150px] cursor-pointer flex-col items-center justify-between rounded-[5px] border-[2px] bg-[#ffffffbd] p-[17px] hover:border-[2px] hover:border-red-700">
+    <div className="item-card relative flex cursor-pointer flex-col items-center justify-between border-[2px] bg-[#ffffffbd] p-[12px] hover:border-[2px] hover:border-red-700 laptop:rounded-[5px] desktop:h-[150px] desktop:p-[17px]">
       <button
         className="absolute right-[-2px] top-[2px] cursor-pointer"
         onClick={(e) => {
@@ -27,7 +27,7 @@ export default function Item({ el, data, setData, setModalState, setIdx }) {
       >
         <MoreVertIcon sx={{ color: red[700], fontSize: 25 }} />
       </button>
-      <div className="flex w-full items-start justify-between">
+      <div className="flex w-full items-center justify-between laptop:items-start">
         <div className="w-[30%]">
           <img
             className="w-[100px] object-contain"
@@ -36,15 +36,15 @@ export default function Item({ el, data, setData, setModalState, setIdx }) {
           />
         </div>
         <div className="w-[65%]">
-          <h1 className="overflow-hidden truncate text-ellipsis whitespace-nowrap text-[20px] text-red-900">
+          <h1 className="overflow-hidden truncate text-ellipsis whitespace-nowrap text-red-900 desktop:text-[20px]">
             {el.title}
           </h1>
-          <h2 className="overflow-hidden truncate text-ellipsis whitespace-nowrap text-[15px] text-[#747474]">
+          <h2 className="overflow-hidden truncate text-ellipsis whitespace-nowrap text-[10px] text-[#747474] desktop:text-[15px]">
             {el.description}
           </h2>
         </div>
       </div>
-      <div className="flex w-full justify-between text-[10px]">
+      <div className="hidden w-full justify-between text-[10px] desktop:flex">
         <h3>
           Priority:{" "}
           <span style={{ color: getPriorityColor(el.priority) }}>

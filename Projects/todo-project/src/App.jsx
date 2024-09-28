@@ -13,7 +13,7 @@ function App() {
         <section className="ctr header fixed left-0 right-0 top-0 z-[102]">
           <Header data={data} setData={setData} todo={todo} />
         </section>
-        <section className="ctr main h-full bg-white pt-[64px]">
+        <section className="ctr main h-full bg-white pt-[40px] laptop:pt-[64px]">
           <Main data={data} setData={setData} />
         </section>
       </div>
