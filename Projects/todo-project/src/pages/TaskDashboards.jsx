@@ -46,7 +46,7 @@ export default function TaskDashboards({
         </div>
       </div>
       <div>
-        <div className="item-box grid max-h-[92vh] gap-[20px] overflow-auto border border-x-[0px] border-y-red-700 p-[10px] sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        <div className="item-box phone:grid-cols-1 grid max-h-[92vh] grid-cols-3 gap-[20px] overflow-auto border border-x-[0px] border-y-red-700 p-[10px]">
           {filteredData().length > 0 ? (
             filteredData().map((el) => (
               <Item
