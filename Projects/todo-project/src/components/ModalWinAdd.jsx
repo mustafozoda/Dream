@@ -1,7 +1,6 @@
 import { useState } from "react";
 import addTodoImg from "../assets/todoImgAdd.jpg";
 import DoneAllTwoToneIcon from "@mui/icons-material/DoneAllTwoTone";
-import BackButton from "./BackButton";
 export default function ModalWinAdd({ setAddModalState, setData }) {
   const [newTaskState, setNewTaskState] = useState({
     title: "",
@@ -35,7 +34,7 @@ export default function ModalWinAdd({ setAddModalState, setData }) {
   return (
     <div
       onClick={() => setAddModalState(false)}
-      className="modal-win-add absolute left-0 top-[0px] z-[100] flex h-[103%] w-[100%] items-start justify-center"
+      className="modal-win-add absolute left-0 top-[0px] z-[100] flex h-full w-[100%] items-start justify-center"
     >
       <div
         onClick={(e) => e.stopPropagation()}

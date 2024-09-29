@@ -15,11 +15,11 @@ export default function Main({ data, setData }) {
   const [modal, setModal] = useState(false);
 
   return (
-    <div className="flex h-full w-full">
-      <section className="w-[20%] bg-red-800">
+    <div className="relative flex h-full w-full">
+      <section className="h-full w-[20%] bg-red-800">
         <Navbar />
       </section>
-      <section className="w-[80%] bg-white laptop:relative">
+      <section className="rel h-full w-[80%] bg-white laptop:relative">
         <Pages
           data={data}
           setIdx={setIdx}

@@ -16,11 +16,11 @@ export default function ModalWindows({
   return (
     <div
       onClick={() => setModalState(false)}
-      className="modal-win fixed left-0 top-0 z-[100] flex h-full w-[100%] items-start justify-end laptop:absolute"
+      className="modal-win absolute left-0 top-0 z-[100] flex h-full w-[100%] items-start justify-end"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="h-full w-[500px] bg-white"
+        className="h-full w-full bg-white tablet:w-[500px]"
       >
         {filteredEl ? (
           <div className="flex flex-col justify-center gap-8 p-[20px]">
@@ -32,7 +32,7 @@ export default function ModalWindows({
                   alt="img"
                 />
               </div>
-              <div className="truncate">
+              <div className="w-full truncate">
                 <h1 className="overflow-hidden text-ellipsis whitespace-nowrap text-[25px] text-red-700">
                   {filteredEl.title}
                 </h1>

@@ -41,7 +41,6 @@ body::-webkit-scrollbar {
 
 .item-card {
   border: 1px solid rgb(54, 54, 54);
-  /* box-shadow: 0 5px 10px hsl(0, 0%, 0%); */
   box-shadow: 0 5px 5px hsl(0, 18%, 50%);
 }
 
