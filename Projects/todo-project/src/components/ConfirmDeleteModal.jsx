@@ -17,11 +17,11 @@ export default function ConfirmDeleteModal({
       {modal && (
         <div
           onClick={() => setModal(false)}
-          className="modal-confirm-delete absolute left-0 top-0 z-[1000] flex h-full w-full items-start justify-center bg-gray-700 bg-opacity-50"
+          className="modal-confirm-delete absolute left-0 top-0 z-[100] flex h-full w-full items-start justify-center bg-gray-700 bg-opacity-50"
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="mt-[200px] flex h-[180px] w-[350px] flex-col items-center justify-center bg-white p-4 text-center shadow-lg phone:w-[450px]"
+            className="mt-[200px] flex h-[180px] w-[350px] flex-col items-center justify-center bg-white p-4 text-center shadow-lg phone:w-[450px] laptop:mr-[20%]"
           >
             <h2 className="text-[30px]">Are you sure?</h2>
             <h5 className="mb-[10px]">

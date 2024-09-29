@@ -38,6 +38,10 @@ body::-webkit-scrollbar,
 .item-card {
   border: 1px solid rgb(54, 54, 54);
   box-shadow: 0 5px 5px hsl(0, 18%, 50%);
+  transition: transform 0.25s ease;
+}
+.item-card:hover {
+  transform: scale(1.05);
 }
 
 .modal-win-add,
