@@ -30,13 +30,13 @@ export default function TaskDashboards({
 
   return (
     <div>
-      <div className="flex items-center justify-between">
+      <div className="flex w-full items-center justify-between">
         <div className="hidden tablet:block tablet:text-[20px] laptop:text-[30px]">
           <h1>
             Task <span className="text-red-700">Dashboards</span>
           </h1>
         </div>
-        <div className="flex gap-[20px]">
+        <div className="flex w-full justify-center tablet:w-fit tablet:gap-[20px]">
           <SelectStatus status={status} setStatus={setStatus} />
           <SelectCategory
             data={data}
@@ -46,7 +46,7 @@ export default function TaskDashboards({
         </div>
       </div>
       <div>
-        <div className="item-box grid max-h-[92vh] grid-cols-3 gap-[20px] overflow-auto border border-x-[0px] border-y-red-700 p-[10px]">
+        <div className="item-box grid max-h-[92vh] grid-cols-1 gap-[20px] overflow-auto border border-x-[0px] border-y-red-700 p-[10px] tablet:grid-cols-2 laptop:grid-cols-3">
           {filteredData().length > 0 ? (
             filteredData().map((el) => (
               <Item

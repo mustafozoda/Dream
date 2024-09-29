@@ -15,7 +15,14 @@ export default function SelectCategory({ data, category, setCategory }) {
   return (
     <FormControl
       variant="standard"
-      sx={{ m: 1, minWidth: 160, color: red[700] }}
+      sx={{
+        m: 1,
+        minWidth: {
+          xs: 120,
+          sm: 180,
+        },
+        color: red[700],
+      }}
     >
       <InputLabel id="demo-simple-select-standard-label">Category</InputLabel>
       <Select
