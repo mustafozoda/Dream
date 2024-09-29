@@ -31,7 +31,7 @@ function App() {
     <BrowserRouter>
       <div className="flex h-[200vh] flex-col">
         <section className="ctr header fixed left-0 right-0 top-0 z-[102]">
-          <Header data={data} setData={setData} todo={data} />
+          <Header data={data} setData={setData} />
         </section>
         <section className="ctr h-full bg-white pt-[40px] laptop:pt-[64px]">
           <Main data={data} setData={setData} />

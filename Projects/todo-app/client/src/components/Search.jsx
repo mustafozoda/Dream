@@ -1,26 +1,48 @@
 import SearchIcon from "@mui/icons-material/Search";
 import { useEffect, useState } from "react";
-export default function Search({ setData, data, todo }) {
+
+const URL = "http://localhost:8080/api/todos";
+
+export default function Search({ setData }) {
   const [query, setQuery] = useState("");
+  const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    const filteredTodos = todo.filter((el) =>
+    async function fetchTodos() {
+      try {
+        const response = await fetch(URL);
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch tasks");
+        }
+
+        const data = await response.json();
+        setTodos(data);
+        setData(data);
+      } catch (error) {
+        console.error("Error fetching todos:", error);
+      }
+    }
+
+    fetchTodos();
+  }, []);
+
+  useEffect(() => {
+    const filteredTodos = todos.filter((el) =>
       el.title.toLowerCase().includes(query.toLowerCase()),
     );
     setData(filteredTodos);
-  }, [query]);
+  }, [query, todos, setData]);
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    setQuery("");
   };
-  // console.log(todo);
 
   return (
-    <div className="">
+    <div>
       <form onSubmit={handleSearchSubmit} className="search-form flex">
         <input
-          placeholder="Search your task here... "
+          placeholder="Search your task here..."
           className="search-form-inp h-[30px] w-[100%] rounded-[5px] rounded-r-none pl-[10px] placeholder:text-[12px] placeholder:text-[#a1a3ab]"
           type="text"
           value={query}
