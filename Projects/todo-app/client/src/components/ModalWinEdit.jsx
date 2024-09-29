@@ -28,20 +28,47 @@ export default function ModalWinEdit({
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const updatedTask = {
       ...targetItem,
       ...editTargetItemState,
     };
+
     setData((prevData) =>
       prevData.map((el) => (el.id === targetItem.id ? updatedTask : el)),
     );
-
-    setIdx(targetItem.id);
     setEditModalState(false);
+
+    try {
+      const response = await fetch(
+        `http://localhost:8080/api/todos/${targetItem.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedTask),
+        },
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to update task on the server");
+      }
+
+      const updatedTaskFromServer = await response.json();
+      setData((prevData) =>
+        prevData.map((task) =>
+          task.id === idx ? updatedTaskFromServer : task,
+        ),
+      );
+      console.log("Task successfully updated in the database");
+    } catch (error) {
+      console.error("Error updating task:", error);
+    }
   };
+
   console.log(data);
 
   return (

@@ -20,15 +20,38 @@ export default function ModalWinAdd({ setAddModalState, setData }) {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     const newTask = {
-      id: Date.now(),
+      // id: Date.now(),
       ...newTaskState,
     };
+    // console.log(Date.now());
 
-    setData((prevData) => [newTask, ...prevData]);
+    // setData((prevData) => [newTask, ...prevData]);
     setAddModalState(false);
+
+    try {
+      const response = await fetch("http://localhost:8080/api/todos", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newTask),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to add task to the server");
+      }
+
+      const createdTask = await response.json();
+      setData((prevData) => [...prevData, createdTask]);
+      setAddModalState(false);
+      console.log("Task successfully added to the database");
+    } catch (error) {
+      console.error("Error adding task:", error);
+    }
   };
 
   return (

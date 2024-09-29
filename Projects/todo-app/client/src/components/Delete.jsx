@@ -1,11 +1,34 @@
 import DeleteIcon from "@mui/icons-material/Delete";
 import ConfirmDeleteModal from "./ConfirmDeleteModal";
 
-export const handleDelete = (filteredEl, data, setData, setModalState) => {
+export const handleDelete = async (
+  filteredEl,
+  data,
+  setData,
+  setModalState,
+) => {
   if (filteredEl) {
     const newData = data.filter((el) => el.id !== filteredEl.id);
     setData(newData);
     setModalState(false);
+
+    try {
+      const response = await fetch(
+        `http://localhost:8080/api/todos/${filteredEl.id}`,
+        {
+          method: "DELETE",
+        },
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to delete task from the server");
+      }
+
+      setData((prevData) => prevData.filter((task) => task.id !== filteredEl));
+      console.log("Task successfully deleted from the database");
+    } catch (error) {
+      console.error("Error deleting task:", error);
+    }
   } else {
     console.warn("filteredEl is undefined or null");
   }

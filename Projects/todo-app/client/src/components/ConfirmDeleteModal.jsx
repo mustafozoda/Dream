@@ -8,9 +8,9 @@ export default function ConfirmDeleteModal({
   setData,
   setModalState,
 }) {
-  console.log(filteredEl);
-  console.log(typeof setModal);
-  console.log(data);
+  // console.log(filteredEl);
+  // console.log(typeof setModal);
+  // console.log(data);
 
   return (
     <>
