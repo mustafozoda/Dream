@@ -1,7 +1,5 @@
 import React from "react";
 import TaskTable from "../components/TaskTable";
-import SwiperTask from "../components/SwiperTask";
-import all from "../assets/all.png";
 
 {
   /*
@@ -45,27 +43,20 @@ export default function TasksOverview({ data, setModal, setData }) {
   }));
 
   return (
-    <div className="w-[100%]">
+    <div className="">
       <div className="flex items-center justify-between">
-        <h1 className="hidden tablet:block tablet:text-[20px] laptop:text-[30px]">
+        <h1 className="tablet:text-[20px] laptop:text-[30px]">
           Tasks <span className="text-red-700">Overview</span>
         </h1>
       </div>
-      <div className="flex flex-col gap-[10px] border border-x-[0px] border-y-red-700 p-[10px]">
-        <div className="flex w-full items-center">
-          <div className="m-[5px] w-[50%]">
+      <div className="border border-x-[0px] border-y-red-700 p-[10px]">
+        <div className="grid-container gap-[10px]">
+          <div className="box1">
             <TaskTable header="Task Priority" rows={priorityCounts} />
           </div>
-          <div className="m-[5px] flex h-full w-[50%] items-center justify-center">
-            {data.length > 0 ? (
-              <SwiperTask setModal={setModal} data={data} setData={setData} />
-            ) : (
-              <img className="h-[160px]" src={all} alt="all" />
-            )}
+          <div className="box2">
+            <TaskTable header="Task Status" rows={statusCounts} />
           </div>
-        </div>
-        <div className="pt-[10px]">
-          <TaskTable header="Task Status" rows={statusCounts} />
         </div>
       </div>
     </div>

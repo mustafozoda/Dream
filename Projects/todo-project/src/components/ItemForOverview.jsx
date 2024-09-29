@@ -1,7 +1,5 @@
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import completed from "../assets/completed.png";
 import incompleted from "../assets/incompleted.png";
-import Delete from "./Delete";
 
 export default function ItemForOverview({ el, setModal, data, setData }) {
   const getPriorityColor = (priority) => {
@@ -39,17 +37,7 @@ export default function ItemForOverview({ el, setModal, data, setData }) {
         <h3>Category: {el.category}</h3>
         <h3>Due Date: {el.dueDate}</h3>
       </div>
-      <div className="absolute right-[10px] top-[10px]">
-        {/* 
-  <Delete
-    filteredEl={el}
-    data={data}
-    setModal={setModal}
-    setData={setData}
-  />
-  This part has an issue; the Delete button is not working properly!
-*/}
-      </div>
+      <div className="absolute right-[10px] top-[10px]"></div>
     </div>
   );
 }

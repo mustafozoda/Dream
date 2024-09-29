@@ -19,7 +19,7 @@ export default function Main({ data, setData }) {
       <section className="h-full w-[20%] bg-red-800">
         <Navbar />
       </section>
-      <section className="rel h-full w-[80%] bg-white laptop:relative">
+      <section className="h-full w-[80%] bg-white laptop:relative">
         <Pages
           data={data}
           setIdx={setIdx}
