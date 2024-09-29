@@ -17,7 +17,7 @@ export default function ConfirmDeleteModal({
       {modal && (
         <div
           onClick={() => setModal(false)}
-          className="modal-confirm-delete fixed left-0 top-0 z-[1000] flex h-full w-full items-start justify-center bg-gray-700 bg-opacity-50"
+          className="modal-confirm-delete absolute left-0 top-0 z-[1000] flex h-full w-full items-start justify-center bg-gray-700 bg-opacity-50"
         >
           <div
             onClick={(e) => e.stopPropagation()}
