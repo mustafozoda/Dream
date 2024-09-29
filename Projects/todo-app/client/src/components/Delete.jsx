@@ -41,7 +41,9 @@ export default function Delete({ filteredEl, data, modal, setModal }) {
         className="flex h-[40px] w-[45px] items-center justify-between rounded-[6px] border border-red-700 px-[10px] text-red-700 hover:bg-red-700 hover:text-white"
         onClick={() => {
           setModal(true);
-          console.log(filteredEl.id);
+          console.log(
+            "Trying to delete an element whose ID is: " + filteredEl.id,
+          );
         }}
       >
         <DeleteIcon />

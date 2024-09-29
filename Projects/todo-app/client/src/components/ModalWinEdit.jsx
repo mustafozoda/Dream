@@ -69,7 +69,7 @@ export default function ModalWinEdit({
     }
   };
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <div
