@@ -21,7 +21,7 @@ export default function ConfirmDeleteModal({
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="mt-[200px] flex h-[180px] w-[450px] flex-col items-center justify-center bg-white p-4 text-center shadow-lg"
+            className="mt-[200px] flex h-[180px] w-[350px] flex-col items-center justify-center bg-white p-4 text-center shadow-lg phone:w-[450px]"
           >
             <h2 className="text-[30px]">Are you sure?</h2>
             <h5 className="mb-[10px]">

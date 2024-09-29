@@ -18,20 +18,16 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
-body::-webkit-scrollbar {
+body::-webkit-scrollbar,
+.item-box::-webkit-scrollbar {
   display: none;
 }
-
 .ctr {
   width: 1536px;
   margin: 0 auto;
 }
 .header {
   box-shadow: 0 4px 8px hsla(204, 3%, 34%, 0.778);
-}
-
-.item-box::-webkit-scrollbar {
-  display: none;
 }
 .search-form-inp,
 .search-form-btn {
@@ -44,15 +40,12 @@ body::-webkit-scrollbar {
   box-shadow: 0 5px 5px hsl(0, 18%, 50%);
 }
 
+.modal-win-add,
+.modal-confirm-delete,
 .modal-win {
-  background-color: rgba(0, 0, 0, 0.243);
-}
-.modal-win-add {
-  background-color: rgba(0, 0, 0, 0.243);
-}
-.modal-confirm-delete {
   background-color: rgba(0, 0, 0, 0.611);
 }
+
 .inactive-style {
   border-radius: 10px;
   padding: 10px;
