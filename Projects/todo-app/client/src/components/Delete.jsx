@@ -1,6 +1,6 @@
 import DeleteIcon from "@mui/icons-material/Delete";
 import ConfirmDeleteModal from "./ConfirmDeleteModal";
-
+import { deleteTodo } from "../api/TodoApi.jsx";
 export const handleDelete = async (
   filteredEl,
   data,
@@ -13,24 +13,12 @@ export const handleDelete = async (
     setModalState(false);
 
     try {
-      const response = await fetch(
-        `https://todo-app-olfy.onrender.com/api/todos/${filteredEl.id}`,
-        {
-          method: "DELETE",
-        },
-      );
-
-      if (!response.ok) {
-        throw new Error("Failed to delete task from the server");
-      }
-
-      setData((prevData) => prevData.filter((task) => task.id !== filteredEl));
+      await deleteTodo(filteredEl.id);
       console.log("Task successfully deleted from the database");
     } catch (error) {
-      console.error("Error deleting task:", error);
+      console.error(`Error deleting task with ID ${filteredEl.id}:`, error);
+      setData(data);
     }
-  } else {
-    console.warn("filteredEl is undefined or null");
   }
 };
 

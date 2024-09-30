@@ -1,38 +1,29 @@
 import { BrowserRouter } from "react-router-dom";
-import { useEffect, useState } from "react";
 import Header from "./components/Header.jsx";
 import Main from "./pages/Main.jsx";
+import { useState, useEffect } from "react";
 import "./App.css";
-// import { todo } from "./ToDo.jsx";
+import { fetchTodos } from "./api/TodoApi.jsx";
 
-// const URL = "http://localhost:8080/api/todos";
-const URL = "https://todo-app-olfy.onrender.com/api/todos";
 function App() {
-  useEffect(() => {
-    async function fetchTodos() {
-      try {
-        const response = await fetch(URL);
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch tasks");
-        }
-
-        const data = await response.json();
-        setData(data);
-      } catch (error) {
-        console.error("Error fetching todos:", error);
-      }
-    }
-
-    fetchTodos();
-  }, []);
   const [data, setData] = useState([]);
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    const loadData = async () => {
+      const fetchedData = await fetchTodos();
+      setData(fetchedData);
+      setTodos(fetchedData);
+    };
+
+    loadData();
+  }, []);
 
   return (
     <BrowserRouter>
       <div className="flex h-[200vh] flex-col">
         <section className="ctr header fixed left-0 right-0 top-0 z-[102]">
-          <Header data={data} setData={setData} />
+          <Header data={data} setData={setData} todos={todos} />
         </section>
         <section className="ctr h-full bg-white pt-[40px] laptop:pt-[64px]">
           <Main data={data} setData={setData} />

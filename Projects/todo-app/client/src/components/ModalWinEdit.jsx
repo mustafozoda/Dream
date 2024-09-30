@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import addTodoImg from "../assets/todoImgAdd.jpg";
 import DoneAllTwoToneIcon from "@mui/icons-material/DoneAllTwoTone";
+import { updateTodo } from "../api/TodoApi";
+
 export default function ModalWinEdit({
   setEditModalState,
   idx,
   data,
   setData,
-  setIdx,
 }) {
   const targetItem = data.find((el) => el.id === idx);
 
@@ -19,6 +20,21 @@ export default function ModalWinEdit({
     completed: targetItem.completed,
     notes: targetItem.notes,
   });
+
+  // Here   -   we are changing value of objects... dynamically to see it the in scree
+  useEffect(() => {
+    if (targetItem) {
+      setEditTargetItemState({
+        title: targetItem.title,
+        description: targetItem.description,
+        dueDate: targetItem.dueDate,
+        priority: targetItem.priority,
+        category: targetItem.category,
+        completed: targetItem.completed,
+        notes: targetItem.notes,
+      });
+    }
+  }, [targetItem]);
 
   const handleInpChange = (e) => {
     const { name, value } = e.target;
@@ -36,39 +52,19 @@ export default function ModalWinEdit({
       ...editTargetItemState,
     };
 
-    setData((prevData) =>
-      prevData.map((el) => (el.id === targetItem.id ? updatedTask : el)),
-    );
-    setEditModalState(false);
-
     try {
-      const response = await fetch(
-        `https://todo-app-olfy.onrender.com/api/todos/${targetItem.id}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(updatedTask),
-        },
-      );
-
-      if (!response.ok) {
-        throw new Error("Failed to update task on the server");
-      }
-
-      const updatedTaskFromServer = await response.json();
+      const updatedTaskFromServer = await updateTodo(updatedTask);
       setData((prevData) =>
         prevData.map((task) =>
-          task.id === idx ? updatedTaskFromServer : task,
+          task.id === updatedTaskFromServer.id ? updatedTaskFromServer : task,
         ),
       );
+      setEditModalState(false);
       console.log("Task successfully updated in the database");
     } catch (error) {
       console.error("Error updating task:", error);
     }
   };
-
   // console.log(data);
 
   return (

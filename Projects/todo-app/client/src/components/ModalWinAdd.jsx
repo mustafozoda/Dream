@@ -1,6 +1,9 @@
 import { useState } from "react";
 import addTodoImg from "../assets/todoImgAdd.jpg";
 import DoneAllTwoToneIcon from "@mui/icons-material/DoneAllTwoTone";
+
+import { createTodo } from "../api/TodoApi.jsx";
+
 export default function ModalWinAdd({ setAddModalState, setData }) {
   const [newTaskState, setNewTaskState] = useState({
     title: "",
@@ -24,31 +27,12 @@ export default function ModalWinAdd({ setAddModalState, setData }) {
     e.preventDefault();
 
     const newTask = {
-      // id: Date.now(),
       ...newTaskState,
     };
-    // console.log(Date.now());
-
-    // setData((prevData) => [newTask, ...prevData]);
     setAddModalState(false);
 
     try {
-      const response = await fetch(
-        "https://todo-app-olfy.onrender.com/api/todos",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(newTask),
-        },
-      );
-
-      if (!response.ok) {
-        throw new Error("Failed to add task to the server");
-      }
-
-      const createdTask = await response.json();
+      const createdTask = await createTodo(newTask);
       setData((prevData) => [...prevData, createdTask]);
       setAddModalState(false);
       console.log("Task successfully added to the database");

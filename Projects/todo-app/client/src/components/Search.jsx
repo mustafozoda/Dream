@@ -1,32 +1,8 @@
 import SearchIcon from "@mui/icons-material/Search";
 import { useEffect, useState } from "react";
 
-// const URL = "http://localhost:8080/api/todos";
-const URL = "https://todo-app-olfy.onrender.com/api/todos";
-
-export default function Search({ setData }) {
+export default function Search({ setData, data, todos }) {
   const [query, setQuery] = useState("");
-  const [todos, setTodos] = useState([]);
-
-  useEffect(() => {
-    async function fetchTodos() {
-      try {
-        const response = await fetch(URL);
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch tasks");
-        }
-
-        const data = await response.json();
-        setTodos(data);
-        setData(data);
-      } catch (error) {
-        console.error("Error fetching todos:", error);
-      }
-    }
-
-    fetchTodos();
-  }, []);
 
   useEffect(() => {
     const filteredTodos = todos.filter((el) =>
