@@ -1,7 +1,8 @@
 import SearchIcon from "@mui/icons-material/Search";
 import { useEffect, useState } from "react";
 
-const URL = "http://localhost:8080/api/todos";
+// const URL = "http://localhost:8080/api/todos";
+const URL = "https://todo-app-olfy.onrender.com";
 
 export default function Search({ setData }) {
   const [query, setQuery] = useState("");

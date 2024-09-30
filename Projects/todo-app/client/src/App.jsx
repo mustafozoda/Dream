@@ -5,12 +5,13 @@ import Main from "./pages/Main.jsx";
 import "./App.css";
 // import { todo } from "./ToDo.jsx";
 
-const URL = "http://localhost:8080/api/todos";
+// const URL = "http://localhost:8080/api/todos";
+const URL = "https://todo-app-olfy.onrender.com";
 function App() {
   useEffect(() => {
     async function fetchTodos() {
       try {
-        const response = await fetch("http://localhost:8080/api/todos");
+        const response = await fetch(URL);
 
         if (!response.ok) {
           throw new Error("Failed to fetch tasks");
