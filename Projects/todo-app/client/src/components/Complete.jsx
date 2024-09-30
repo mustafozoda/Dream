@@ -10,7 +10,7 @@ export default function Complete({ filteredEl, data, setData }) {
 
     try {
       const response = await fetch(
-        `http://localhost:8080/api/todos/${filteredEl.id}`,
+        `https://todo-app-olfy.onrender.com/api/todos/${filteredEl.id}`,
         {
           method: "PUT",
           headers: {

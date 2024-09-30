@@ -14,7 +14,7 @@ export const handleDelete = async (
 
     try {
       const response = await fetch(
-        `http://localhost:8080/api/todos/${filteredEl.id}`,
+        `https://todo-app-olfy.onrender.com/api/todos/${filteredEl.id}`,
         {
           method: "DELETE",
         },

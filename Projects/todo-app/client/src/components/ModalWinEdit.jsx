@@ -43,7 +43,7 @@ export default function ModalWinEdit({
 
     try {
       const response = await fetch(
-        `http://localhost:8080/api/todos/${targetItem.id}`,
+        `https://todo-app-olfy.onrender.com/api/todos/${targetItem.id}`,
         {
           method: "PUT",
           headers: {

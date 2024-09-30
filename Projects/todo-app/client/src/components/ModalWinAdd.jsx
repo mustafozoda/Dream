@@ -33,13 +33,16 @@ export default function ModalWinAdd({ setAddModalState, setData }) {
     setAddModalState(false);
 
     try {
-      const response = await fetch("http://localhost:8080/api/todos", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://todo-app-olfy.onrender.com/api/todos",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newTask),
         },
-        body: JSON.stringify(newTask),
-      });
+      );
 
       if (!response.ok) {
         throw new Error("Failed to add task to the server");
