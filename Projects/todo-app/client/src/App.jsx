@@ -6,7 +6,7 @@ import "./App.css";
 // import { todo } from "./ToDo.jsx";
 
 // const URL = "http://localhost:8080/api/todos";
-const URL = "https://todo-app-olfy.onrender.com";
+const URL = "https://todo-app-olfy.onrender.com/api/todos";
 function App() {
   useEffect(() => {
     async function fetchTodos() {
