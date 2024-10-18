@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import axios from "axios";
 
 const URL = "https://todo-app-olfy.onrender.com/api/todos";
+// const URL = "http://localhost:8080/api/todos";
 
 export const fetchTodos = async () => {
   try {
