@@ -1,14 +1,19 @@
 import React from "react";
 import { ProjectProvider } from "./context/ProjectContext";
+import { DepartmentProvider } from "./context/DepartmentContext"; // Add DepartmentProvider
 import AppRoutes from "./routes";
 import Header from "./components/Header";
 
 const App = () => {
   return (
-    <ProjectProvider>
+    <>
       <Header />
-      <AppRoutes />
-    </ProjectProvider>
+      <ProjectProvider>
+        <DepartmentProvider>
+          <AppRoutes />
+        </DepartmentProvider>
+      </ProjectProvider>
+    </>
   );
 };
 
